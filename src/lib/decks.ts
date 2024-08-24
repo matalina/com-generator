@@ -71,8 +71,8 @@ export const arcana: Deck = [
 ];
 
 suits =  ['Cups','Pentacles','Swords','Wands'];
-face = ['Page','Queen','King','Ace'];
-faceValue = [11,12,13,1];
+face = ['Page','Jack','Queen','King','Ace'];
+faceValue = [11,12,13,14,1];
 
 export const majorArcana = shuffle(arcana);
 export const tarotDeck = shuffle(makeDeck(arcana, suits, face, faceValue));

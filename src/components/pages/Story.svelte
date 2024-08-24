@@ -5,7 +5,7 @@
   import ToggleContent from "../ui/ToggleContent.svelte";
   import Content from "../story-mode/Content.svelte";
   import { DiceRoll } from "@dice-roller/rpg-dice-roller";
-  import { daysWeek, moonPhases, rollOnTable, timeDay, season, weather } from "../../lib/tables";
+  import { rollOnTable } from "../../lib/tables";
   import InputButton from "../story-mode/InputButton.svelte";
   import DiceButton from "../story-mode/DiceButton.svelte";
   import KeywordsButton from "../story-mode/KeywordsButton.svelte";

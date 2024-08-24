@@ -1,15 +1,13 @@
 <script>
   import { Router, Route, Link } from 'svelte-routing';
-  import Home from './components/pages/Home.svelte';
   import Disclaimer from './components/ui/Disclaimer.svelte';
   import ChangeLog from './components/pages/ChangeLog.svelte';
-  import Explorers from './components/pages/Explorers.svelte';
-  import Solo from './components/pages/Solo.svelte';
   import Story from './components/pages/Story.svelte';
+  import Tarot from './components/pages/Tarot.svelte';
 
-  import table from './assets/table.svg';
   import openBook from './assets/open-book.svg';
-  import d20 from './assets/d20.svg';
+  
+  import cards from './assets/cards.svg';
 
   export let url = '';
 </script>
@@ -25,29 +23,22 @@
           <img src={openBook} alt="Story Mode" class="h-4"/>
           </div>
         </Link>
-        <Link to="/simple">
+        <Link to="/tarot">
           <div
             class="py-2 px-3 border border-gray-900 text-gray-900 mr-2 focus:bg-gray-200 hover:bg-gray-200"
           >
-          <img src={d20} alt="Simple Mode" class="h-4"/>
+          <img src={cards} alt="Tarot Cards" class="h-4"/>
           </div>
         </Link>
-        <Link to="/all">
-          <div
-            class="py-2 px-3 border border-gray-900 text-gray-900 mr-2 focus:bg-gray-200 hover:bg-gray-200"
-          >
-          <img src={table} alt="All Tools" class="h-4"/>
-          </div>
-        </Link>
+        
       </div>
       <Link class="text-xs text-gray-500 p-2" to="/change-log">
-        v1.240711.01
+        v0.240824.01
       </Link>
     </nav>
     <section>
       <Route path="/" component={Story} />
-      <Route path="/simple" component={Solo} />
-      <Route path="/all" component={Home} />
+      <Route path="/simple" component={Tarot} />
       <Route path="/change-log" component={ChangeLog} />
     </section>
     <Disclaimer />

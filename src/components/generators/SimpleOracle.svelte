@@ -21,7 +21,6 @@ let roll;
 let ask;
 let isAndOrBut = false;
 let keywords = [];
-let isGMIntrusion: {isGMI: boolean, roll?: DiceRoll, keywords?: string[]} = {isGMI: false};
 
 function getAnswer() {
   reset();
@@ -43,13 +42,6 @@ function getAnswer() {
     keywords = [...getRandomKeywords()];
   }
 
-  const gmi = new DiceRoll('1d10');
-  const isGMI = ask % 10 === gmi.total % 10;
-  isGMIntrusion.roll = gmi;
-  if (isGMI) {
-    isGMIntrusion.isGMI = true;
-    isGMIntrusion.keywords = getRandomKeywords();
-  }
   return answer;
 }
 
@@ -60,7 +52,6 @@ function reset() {
   ask = 0;
   keywords = [];
   isAndOrBut = false;
-  isGMIntrusion = {isGMI: false};
 }
 </script>
 
@@ -79,10 +70,6 @@ function reset() {
       <small class="text-xs text-blue-500">(${roll.output})</small><br/>
       <strong>${answer}</strong><br/>
       ${isAndOrBut ? `${keywords.join(', ')}<br/>`: ''}
-      <small class="text-xs text-blue-500">(${isGMIntrusion.roll.output})</small><br/>
-      ${isGMIntrusion.isGMI ? `<strong>GM Intrusion: +1XP</strong><br/>`: ''}
-      ${isGMIntrusion.isGMI ? `${isGMIntrusion.keywords.join(', ')}<br/>`: ''}
-
       `} />
     {/if}
   </div>
